@@ -7,7 +7,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 import oz.greeter.GreeterStrategy;
 
@@ -19,6 +18,7 @@ public class GreeterConfiguration {
 	private ApplicationContext context;
 
 	@ConditionalOnClass(name="oz.en.greeter.Greeter")
+	@ConditionalOnMissingClass("oz.fr.greeter.Greeter")
 	@Bean
 	public GreeterStrategy enGreeter() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		System.out.println("Creating English Greeter  " + context.getBean(GreeterStrategy.class));
@@ -27,7 +27,6 @@ public class GreeterConfiguration {
 
 	@Bean
 	@ConditionalOnClass(name="oz.fr.greeter.Greeter")
-	@Primary
 	public GreeterStrategy frGreeter() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		System.out.println("Creating French Greeter");
 		return (GreeterStrategy)Class.forName("oz.fr.greeter.Greeter").newInstance();
