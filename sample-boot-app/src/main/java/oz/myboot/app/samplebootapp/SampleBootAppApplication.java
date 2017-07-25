@@ -12,7 +12,7 @@ import oz.greeter.GreeterStrategy;
 @RestController
 public class SampleBootAppApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(SampleBootAppApplication.class, args);
+		SpringApplication.run(SampleBootAppApplication.class, new String[]{"--language=fr"});
 	}
 
 	@Autowired
