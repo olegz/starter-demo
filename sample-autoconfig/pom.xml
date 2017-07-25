@@ -8,23 +8,40 @@
 
 	<name>sample-autoconfig</name>
 	<description>Demo project for Spring Boot</description>
-   <parent>
-        <groupId>oz.starter.demo</groupId>
-        <artifactId>starter-demo</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
-    </parent>
+	<parent>
+		<groupId>oz.starter.demo</groupId>
+		<artifactId>starter-demo</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath />
+	</parent>
 
 	<dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+		</dependency>
+		<dependency>
+            <groupId>oz.greeter</groupId>
+            <artifactId>greeter-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+		<dependency>
+			<groupId>oz.fr.greeter</groupId>
+			<artifactId>greeter-fr</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+            <groupId>oz.en.greeter</groupId>
+            <artifactId>greeter-en</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <optional>true</optional>
         </dependency>
 
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 </project>
